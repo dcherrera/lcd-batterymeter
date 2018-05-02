@@ -10,10 +10,10 @@ template<class T> inline Print &operator <<(Print &obj, T arg) { obj.print(arg);
 #define INTERVAL 200		//the amount of time to delay between readings
 #define SHUNTRES 0.62		//define value of resistor used as shunt
 #define ENDVOLT 2.9			//define the voltage at which the test stops
-#define VIN A1				//define the pin number for input A, which will be used to read the cell positive voltage
-#define SHUNT A0			//define the pin number for B, which tells us the voltage on the other side of the shunt resistor
-#define GATE1 0				//the pin used to control the gate on the first mosfet		   
-#define GATE2 1				//The pin used to control the gate on the second mosfet
+#define VIN A2				//define the pin number for input A, which will be used to read the cell positive voltage
+#define SHUNT A1			//define the pin number for B, which tells us the voltage on the other side of the shunt resistor
+#define GATE1 2				//the pin used to control the gate on the first mosfet		   
+#define GATE2 3				//The pin used to control the gate on the second mosfet
 #define CONTRAST 20			//The contrast level. Change the value between 0 and 255 if you don't see anything
 #define CONTRASTPIN 9		//The pin connected to the contrast on the LCD. Pin must have a PWM output
 #define RESCHECKVOLT 3.5	//the resistance check will occur as soon as the voltage drops below this value
@@ -46,7 +46,7 @@ byte ohm[8] = {
 
 // initialize the library with the numbers of the interface pins
 //make sure to change this to the appropriate pins for your setup
-LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
+LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 
 void updateDisplay(){
 
